@@ -1,4 +1,6 @@
-import test
+import buyAndHold as bAH
+import bollingerBands as bB
+
 
 if __name__ == '__main__':
-    test.testfun()
+    bB.bollinger_bands_test()
