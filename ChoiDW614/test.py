@@ -184,44 +184,44 @@ import matplotlib.pyplot as plt
 # learn to use FinanceDataReader
 
 
-def testfun():
-    # pd.set_option('display.max_columns', 11)
-    # df_krx = fdr.StockListing("KRX")
-    # print(len(df_krx))
-    # print(df_krx.head())
-
-    # df_spx = fdr.StockListing("SP500")
-    # print(df_spx.head())
-    # print(len(df_spx))
-    # print(df_spx.head())
-
-    # df = fdr.DataReader('001250', '2018')
-    # print(df.head(10))
-    # df['Close'].plot()
-    # plt.show()
-
-    # df = fdr.DataReader('AAPL', '2010')
-    # print(df.head(10))
-    # df['Close'].plot()
-    # plt.show()
-
-    exchange_map = {
-        'KRX': 'Seoul', '한국 거래소': 'Seoul',
-        'NASDAQ': 'NASDAQ', '나스닥': 'NASDAQ',
-        'NYSE': 'NYSE', '뉴욕증권거래소': 'NYSE',
-        'AMEX': 'AMEX', '미국증권거래소': 'AMEX',
-        'Shanghai': 'Shanghai', '상해': 'Shanghai', '상하이': 'Shanghai',
-        'Shenzhen': 'Shenzhen', '심천': 'Shenzhen',
-        'Hong Kong': 'Hong Kong', '홍콩': 'Hong Kong',
-        'Tokyo': 'Tokyo', '도쿄': 'Tokyo',
-    }
-
-    # jp_df1 = fdr.DataReader(symbol='7751', start='2019-01-01', exchange='TSE')
-    # jp_df2 = fdr.DataReader(symbol='7751', start='2019-01-01', exchange='도쿄')
-    # jp_df2['Close'].plot()
-    # plt.show()
-    #
-    # ch_df1 = fdr.DataReader(symbol='601186', start='2019-01-01', exchange='SSE')
-    # ch_df2 = fdr.DataReader(symbol='601186', start='2019-01-01', exchange='상해')
-    # ch_df1['Close'].plot()
-    # plt.show()
+# def testfun():
+#     pd.set_option('display.max_columns', 11)
+#     df_krx = fdr.StockListing("KRX")
+#     print(len(df_krx))
+#     print(df_krx.head())
+#
+#     df_spx = fdr.StockListing("SP500")
+#     print(df_spx.head())
+#     print(len(df_spx))
+#     print(df_spx.head())
+#
+#     df = fdr.DataReader('001250', '2018')
+#     print(df.head(10))
+#     df['Close'].plot()
+#     plt.show()
+#
+#     df = fdr.DataReader('AAPL', '2010')
+#     print(df.head(10))
+#     df['Close'].plot()
+#     plt.show()
+#
+#     exchange_map = {
+#         'KRX': 'Seoul', '한국 거래소': 'Seoul',
+#         'NASDAQ': 'NASDAQ', '나스닥': 'NASDAQ',
+#         'NYSE': 'NYSE', '뉴욕증권거래소': 'NYSE',
+#         'AMEX': 'AMEX', '미국증권거래소': 'AMEX',
+#         'Shanghai': 'Shanghai', '상해': 'Shanghai', '상하이': 'Shanghai',
+#         'Shenzhen': 'Shenzhen', '심천': 'Shenzhen',
+#         'Hong Kong': 'Hong Kong', '홍콩': 'Hong Kong',
+#         'Tokyo': 'Tokyo', '도쿄': 'Tokyo',
+#     }
+#
+#     jp_df1 = fdr.DataReader(symbol='7751', start='2019-01-01', exchange='TSE')
+#     jp_df2 = fdr.DataReader(symbol='7751', start='2019-01-01', exchange='도쿄')
+#     jp_df2['Close'].plot()
+#     plt.show()
+#
+#     ch_df1 = fdr.DataReader(symbol='601186', start='2019-01-01', exchange='SSE')
+#     ch_df2 = fdr.DataReader(symbol='601186', start='2019-01-01', exchange='상해')
+#     ch_df1['Close'].plot()
+#     plt.show()
