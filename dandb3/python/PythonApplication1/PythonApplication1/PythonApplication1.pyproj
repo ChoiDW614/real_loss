@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>07485a3d-158a-48ac-ab4d-2a39221649ff</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ch4.py</StartupFile>
+    <StartupFile>마법공식.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="relative momentum.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="데이터갖고오기.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="마법공식.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
