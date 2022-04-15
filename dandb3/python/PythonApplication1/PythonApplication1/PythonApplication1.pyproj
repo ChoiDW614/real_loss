@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>07485a3d-158a-48ac-ab4d-2a39221649ff</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>relative momentum.py</StartupFile>
+    <StartupFile>ch4.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,12 +23,6 @@
   <ItemGroup>
     <Compile Include="3chap까지.py" />
     <Compile Include="ch4.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="absolute momentum.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="relative momentum.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
