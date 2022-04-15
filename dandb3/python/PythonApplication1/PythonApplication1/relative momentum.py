@@ -1,4 +1,8 @@
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 # -*- coding: euc-kr -*-
 
 import os
