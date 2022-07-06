@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>07485a3d-158a-48ac-ab4d-2a39221649ff</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>마법공식.py</StartupFile>
+    <StartupFile>머신러닝.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,7 @@
     <Compile Include="absolute momentum.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="API로 데이터 갖고오기.py" />
     <Compile Include="ch4.py">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +38,7 @@
     <Compile Include="마법공식.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="머신러닝.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
