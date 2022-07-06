@@ -2,24 +2,30 @@ import pandas as pd
 import matplotlib.pylab as plt
 
 
-def read_data(file_root):
+def read_data(file_root, online_file):
+    df = pd.DataFrame.empty
     # read data
-    pd.set_option('display.max_columns', 6)
-    df = pd.read_csv(file_root)
-    # print(df.describe())
+    try:
+        df = pd.read_csv(file_root)
+    except Exception as e:
+        print(e)
+        print(file_root)
+        exit(-1)
 
-    # extract date and Adj Close from df
-    price_df = df.loc[:, ['Date', 'Adj Close']].copy()  # preventing modification of source data
-    # print(price_df.head())
+    if online_file:
+        price_df = df.loc[:, ['Date', 'Close']].copy()
+        price_df['Adj Close'] = price_df['Close']
+        price_df.set_index(['Date'], inplace=True)
+        return price_df
+    else:
+        # print(df.describe())
+        # extract date and Adj Close from df
+        price_df = df.loc[:, ['Date', 'Adj Close']].copy()  # preventing modification of source data
+        # print(price_df.head())
 
-    price_df.set_index(['Date'], inplace=True)
-    # print(price_df.head())
-
-    # price_df['center'] = price_df['Adj Close'].rolling(window=20).mean()
-    # price_df['ub'] = price_df['center'] + 2 * price_df['Adj Close'].rolling(window=20).std()
-    # price_df['lb'] = price_df['center'] - 2 * price_df['Adj Close'].rolling(window=20).std()
-    # print(price_df.iloc[18:25])
-    return price_df
+        price_df.set_index(['Date'], inplace=True)
+        # print(price_df.head())
+        return price_df
 
 
 def bollinger_band(price_df, n, sigma):
@@ -83,8 +89,9 @@ def returns(book):
     return round(acc_rtn, 4)
 
 
-def bollinger_bands_test():
-    price_df = read_data('./bin/data/AAPL.csv')
+def run_bollinger_bands(root, online_file=True):
+    file_root = './bin/data/' + root + '.csv'
+    price_df = read_data(file_root, online_file)
     n = 20
     sigma = 2
     bollinger = bollinger_band(price_df, n, sigma)
