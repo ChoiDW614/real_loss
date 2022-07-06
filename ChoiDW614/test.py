@@ -218,6 +218,7 @@ import matplotlib.pyplot as plt
 #
 #     jp_df1 = fdr.DataReader(symbol='7751', start='2019-01-01', exchange='TSE')
 #     jp_df2 = fdr.DataReader(symbol='7751', start='2019-01-01', exchange='도쿄')
+#     print(jp_df2.head())
 #     jp_df2['Close'].plot()
 #     plt.show()
 #
