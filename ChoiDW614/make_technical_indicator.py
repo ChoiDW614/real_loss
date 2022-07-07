@@ -66,7 +66,7 @@ def relative_strength_index(df, n):
     PosDI = pd.Series(UpI.ewm(span=n, min_periods=n).mean())
     NegDI = pd.Series(DoI.ewm(span=n, min_periods=n).mean())
 
-    RSI = pd.Series(PosDI / (PosDI + NegDI), name='RSI_'+ str(n))
+    RSI = pd.Series(PosDI / (PosDI + NegDI), name='RSI_' + str(n))
     df = df.join(RSI)
     return df
 
@@ -80,8 +80,8 @@ def make_technical_indicator():
     df = df.dropna()
 
     df['target'] = df['CLOSE_SPY'].pct_change()
-    df['target'] = np.where(df['target'] > 0, 1, 0)    # record whether it's up or down from the previous day
-    df['target'].value_counts()
+    df['target'] = np.where(df['target'] > 0.0005, 1, 0)    # record whether it's up or down from the previous day and change the definition of target
+    # df['target'].value_counts()
     df['target'] = df['target'].shift(-1)
 
     df = df.dropna()
