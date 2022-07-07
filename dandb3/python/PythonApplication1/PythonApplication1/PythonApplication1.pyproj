@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>07485a3d-158a-48ac-ab4d-2a39221649ff</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>머신러닝.py</StartupFile>
+    <StartupFile>Ch6_2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,7 @@
     <Compile Include="ch4.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Ch5.py" />
     <Compile Include="relative momentum.py">
       <SubType>Code</SubType>
     </Compile>
@@ -39,6 +40,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="머신러닝.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ch6_2.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -119,8 +119,33 @@ def get_confusion_matrix(y_test, pred):
     print("confusion matrix")
     print("accuracy:{0:.4f},precision:{1:.4f},recall:{2:.4f},F1:{3:.4f},ROC AUC score:{4:.4f}".format(accuracy, precision, recall, f1, roc_score))
 
-xgb_dis = XGBClassifier(n_estimators=400, learning_rate=0.1, max_depth=3)
-xgb_dis.fit(X_train, y_train) #y_train : 0 or 1
-xgb_pred = xgb_dis.predict(X_test)
-print(xgb_dis.score(X_train, y_train))
-get_confusion_matrix(y_test, xgb_pred)
+#Method Using XGBoost
+#xgb_dis = XGBClassifier(n_estimators=400, learning_rate=0.1, max_depth=3)
+#xgb_dis.fit(X_train, y_train) #y_train : 0 or 1
+#xgb_pred = xgb_dis.predict(X_test)
+#print(xgb_dis.score(X_train, y_train))
+#get_confusion_matrix(y_test, xgb_pred)
+
+
+#Method Using RandomForest
+n_estimators = range(10, 200, 10)
+params = {
+    "bootstrap": [True],
+    "n_estimators": n_estimators,
+    "max_depth":[4, 6, 8, 10, 12],
+    "min_samples_leaf": [2, 3, 4, 5],
+    "min_samples_split": [2, 4, 6, 8, 10],
+    "max_features": [4]
+    }
+
+my_cv = TimeSeriesSplit(n_splits = 5).split(X_train)  # construct fold dataset
+clf = GridSearchCV(RandomForestClassifier(), params, cv=my_cv, n_jobs=-1) # find best set of params
+clf.fit(X_train, y_train)
+
+print("best parameter:\n", clf.best_params_)
+print("best prediction:{0:.4f}".format(clf.best_score_))
+
+pred_con = clf.predict(X_test)
+accuracy_con = accuracy_score(y_test, pred_con)
+print("accuracy:{0:.4f}".format(accuracy_con))
+get_confusion_matrix(y_test, pred_con)
