@@ -5,11 +5,14 @@ import warnings
 import pandas as pd
 import matplotlib.pyplot as plt
 import make_technical_indicator
-import model_training
+import XGBoost_model_training
+import random_forest_model_training
+import KNN
 
 if __name__ == '__main__':
-    model_training.training()
-
+    # XGBoost_model_training.training()
+    # random_forest_model_training.training()
+    KNN.training()
 
 def use_bollinger_band():
     warnings.filterwarnings(action='ignore')
