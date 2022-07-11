@@ -8,11 +8,13 @@ import make_technical_indicator
 import XGBoost_model_training
 import random_forest_model_training
 import KNN
+import Kmeans_cluster
 
 if __name__ == '__main__':
     # XGBoost_model_training.training()
     # random_forest_model_training.training()
-    KNN.training()
+    Kmeans_cluster.clustering()
+
 
 def use_bollinger_band():
     warnings.filterwarnings(action='ignore')
